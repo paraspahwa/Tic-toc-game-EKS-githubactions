@@ -41,9 +41,6 @@ jobs:
       - name: docker pull image
         run: docker pull paraspahwa/tic-tac-toe:latest
 
-      - name: Image scan
-        run: trivy image paraspahwa/tic-tac-toe:latest > trivyimagedeploy.txt  
-
       - name: Deploy to container
         run: docker run -d --name game -p 3000:3000 paraspahwa/tic-tac-toe:latest
 
